@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verdant — Global Sourcing & Consulting</title>
+  <meta name="description" content="Building Trusted Pathways Between Global Manufacturing and India. A principal-led platform enabling market entry, distribution, and long-term partnerships across India's manufacturing ecosystem.">
+
+  <style>
+    @font-face {
+      font-family: 'Manrope';
+      src: url('assets/Manrope-VariableFont_wght.ttf') format('truetype');
+      font-weight: 200 800;
+      font-display: swap;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --green: #25A55F;
+      --green-light: #2EBF6E;
+      --green-dark: #1B7A46;
+      --green-glow: rgba(37, 165, 95, 0.35);
+      --green-subtle: rgba(37, 165, 95, 0.08);
+      --green-mist: #E8F8EF;
+      --dark: #0A0F0D;
+      --dark-card: #111916;
+      --dark-surface: #151D19;
+      --dark-border: rgba(37, 165, 95, 0.12);
+      --ink: #1A1A1A;
+      --ink-soft: #3D3D3D;
+      --ink-muted: #6B7280;
+      --light: #F7FAF8;
+      --white: #FFFFFF;
+      --border: #E2E8E5;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      font-size: 17px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ═══════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 0 32px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .nav--scrolled {
+      background: rgba(10, 15, 13, 0.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .nav__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .nav__logo img {
+      height: 40px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav__links a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.92rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      transition: color 0.3s ease;
+    }
+
+    .nav__links a:hover {
+      color: var(--white);
+    }
+
+    .nav__cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green);
+      color: var(--white) !important;
+      padding: 10px 26px;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px var(--green-glow);
+    }
+
+    .nav__cta-link:hover {
+      background: var(--green-light);
+      transform: translateY(-1px);
+      box-shadow: 0 0 30px var(--green-glow);
+    }
+
+    .nav__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .nav__hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+      padding: 120px 0 80px;
+    }
+
+    .hero__mesh {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .hero__mesh-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.5;
+      animation: orbFloat 12s ease-in-out infinite alternate;
+    }
+
+    .hero__mesh-orb--1 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--green) 0%, transparent 70%);
+      top: -15%;
+      right: -5%;
+      animation-delay: 0s;
+    }
+
+    .hero__mesh-orb--2 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(37, 165, 95, 0.6) 0%, transparent 70%);
+      bottom: -10%;
+      left: -10%;
+      animation-delay: -4s;
+    }
+
+    .hero__mesh-orb--3 {
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(46, 191, 110, 0.4) 0%, transparent 70%);
+      top: 40%;
+      left: 35%;
+      animation-delay: -8s;
+    }
+
+    .hero__grid-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(37, 165, 95, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 165, 95, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 70%);
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 20px 8px 12px;
+      background: rgba(37, 165, 95, 0.1);
+      border: 1px solid rgba(37, 165, 95, 0.2);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--green-light);
+      letter-spacing: 0.03em;
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    }
+
+    .hero__badge-pulse {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .hero__badge-pulse::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      border: 1.5px solid var(--green);
+      animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    .hero__title {
+      font-size: clamp(3.2rem, 6.5vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      color: var(--white);
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+    }
+
+    .hero__title .highlight {
+      background: linear-gradient(135deg, var(--green-light), var(--green), #1ED760);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero__subtitle {
+      font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.55);
+      max-width: 680px;
+      margin-bottom: 52px;
+      font-weight: 400;
+      opacity: 0;
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+    }
+
+    .hero__actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      opacity: 0;
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.65s forwards;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      border-radius: 100px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn--green {
+      background: var(--green);
+      color: var(--white);
+      box-shadow: 0 4px 24px var(--green-glow), inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+
+    .btn--green:hover {
+      background: var(--green-light);
+      box-shadow: 0 8px 40px var(--green-glow);
+      transform: translateY(-2px);
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn--outline:hover {
+      border-color: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .btn__arrow {
+      transition: transform 0.3s ease;
+      font-size: 1.1em;
+    }
+
+    .btn:hover .btn__arrow {
+      transform: translateX(4px);
+    }
+
+    /* Hero stats strip */
+    .hero__stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 80px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      opacity: 0;
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.85s forwards;
+    }
+
+    .hero__stat-num {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--green-light);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .hero__stat-label {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.4);
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    /* ═══════════════════════════════════════
+       SHARED SECTION STYLES
+    ═══════════════════════════════════════ */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 20px;
+    }
+
+    .section-label__bar {
+      width: 32px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--green-light));
+      border-radius: 3px;
+    }
+
+    .section-title {
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    .section-text {
+      font-size: 1.12rem;
+      color: var(--ink-muted);
+      line-height: 1.8;
+      max-width: 640px;
+    }
+
+    /* ═══════════════════════════════════════
+       INTRO / ABOUT
+    ═══════════════════════════════════════ */
+    .intro {
+      padding: 140px 0;
+      background: var(--white);
+      position: relative;
+    }
+
+    .intro__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .intro__lead {
+      font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+      font-weight: 600;
+      line-height: 1.55;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .intro__lead .green {
+      color: var(--green);
+    }
+
+    .intro__body p {
+      font-size: 1.08rem;
+      color: var(--ink-muted);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    .intro__body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ═══════════════════════════════════════
+       PRINCIPAL
+    ═══════════════════════════════════════ */
+    .principal {
+      padding: 140px 0;
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .principal::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37, 165, 95, 0.12) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      filter: blur(60px);
+    }
+
+    .principal__inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .principal .section-title {
+      color: var(--white);
+    }
+
+    .principal .section-text {
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .principal__bio p {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    .principal__card {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 24px;
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .principal__card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--green-light), var(--green));
+    }
+
+    .principal__card-quote {
+      font-size: 1.2rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.75);
+      font-style: italic;
+      margin-bottom: 32px;
+      position: relative;
+      padding-left: 24px;
+      border-left: 3px solid var(--green);
+    }
+
+    .principal__card-author {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .principal__card-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), var(--green-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: var(--white);
+      font-size: 1rem;
+    }
+
+    .principal__card-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--white);
+    }
+
+    .principal__card-role {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.45);
+      margin-top: 3px;
+    }
+
+    /* ═══════════════════════════════════════
+       SERVICES
+    ═══════════════════════════════════════ */
+    .services {
+      padding: 140px 0;
+      background: var(--light);
+    }
+
+    .services__header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 72px;
+    }
+
+    .services__header .section-title {
+      margin-bottom: 16px;
+    }
+
+    .services__header .section-text {
+      margin: 0 auto;
+    }
+
+    .services__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 44px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(135deg, transparent 40%, var(--green) 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(37, 165, 95, 0.08), 0 4px 16px rgba(0,0,0,0.04);
+      border-color: transparent;
+    }
+
+    .service-card:hover::after {
+      opacity: 1;
+    }
+
+    .service-card__num {
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--green-mist);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .service-card:hover .service-card__num {
+      color: rgba(37, 165, 95, 0.15);
+    }
+
+    .service-card__title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .service-card__text {
+      font-size: 1rem;
+      color: var(--ink-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .service-card__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .service-card__list li {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      padding-left: 24px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .service-card__list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      opacity: 0.3;
+      transition: opacity 0.3s ease;
+    }
+
+    .service-card:hover .service-card__list li::before {
+      opacity: 0.7;
+    }
+
+    /* ═══════════════════════════════════════
+       NETWORK
+    ═══════════════════════════════════════ */
+    .network {
+      padding: 140px 0;
+      background: var(--white);
+    }
+
+    .network__top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+
+    .network__cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .network-card {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 24px;
+      text-align: center;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .network-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--green-light));
+      transform: scaleX(0);
+      transition: transform 0.35s ease;
+    }
+
+    .network-card:hover {
+      border-color: rgba(37, 165, 95, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+    }
+
+    .network-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .network-card__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: var(--green-mist);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+    }
+
+    .network-card__icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--green);
+    }
+
+    .network-card__title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .network-card__text {
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════
+       CLIENTS (Who We Work With)
+    ═══════════════════════════════════════ */
+    .clients {
+      padding: 140px 0;
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .clients::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 50%, rgba(37, 165, 95, 0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 80% 50%, rgba(37, 165, 95, 0.04) 0%, transparent 70%);
+    }
+
+    .clients__inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .clients__header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 64px;
+    }
+
+    .clients__header .section-title {
+      color: var(--white);
+    }
+
+    .clients__header .section-text {
+      color: rgba(255, 255, 255, 0.5);
+      margin: 0 auto;
+    }
+
+    .clients__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .client-card {
+      padding: 36px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: all 0.35s ease;
+    }
+
+    .client-card:hover {
+      background: rgba(37, 165, 95, 0.06);
+      border-color: rgba(37, 165, 95, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .client-card__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(37, 165, 95, 0.1);
+      border: 1px solid rgba(37, 165, 95, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .client-card__icon svg {
+      width: 22px;
+      height: 22px;
+      color: var(--green-light);
+    }
+
+    .client-card__title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .client-card__text {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════
+       PHILOSOPHY
+    ═══════════════════════════════════════ */
+    .philosophy {
+      padding: 140px 0;
+      background: var(--white);
+      position: relative;
+    }
+
+    .philosophy__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .philosophy__statement {
+      font-size: clamp(1.4rem, 2.2vw, 1.65rem);
+      font-weight: 600;
+      line-height: 1.55;
+      color: var(--ink);
+      margin-top: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .philosophy__statement .green {
+      color: var(--green);
+    }
+
+    .philosophy__values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .value-card {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      transition: all 0.3s ease;
+    }
+
+    .value-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+      transform: translateY(-2px);
+    }
+
+    .value-card__icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--green-mist);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .value-card__icon svg {
+      width: 18px;
+      height: 18px;
+      color: var(--green);
+    }
+
+    .value-card__title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .value-card__text {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      line-height: 1.65;
+    }
+
+    /* ═══════════════════════════════════════
+       ENGAGEMENT
+    ═══════════════════════════════════════ */
+    .engagement {
+      padding: 140px 0;
+      background: var(--light);
+    }
+
+    .engagement__header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 64px;
+    }
+
+    .engagement__header .section-text {
+      margin: 0 auto;
+    }
+
+    .engagement__track {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .engagement__track::before {
+      content: '';
+      position: absolute;
+      top: 38px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--green), var(--green-light), var(--green));
+      opacity: 0.2;
+    }
+
+    .engagement-step {
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .engagement-step__num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--green);
+      color: var(--green);
+      font-size: 1.1rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s ease;
+    }
+
+    .engagement-step:hover .engagement-step__num {
+      background: var(--green);
+      color: var(--white);
+      box-shadow: 0 0 24px var(--green-glow);
+    }
+
+    .engagement-step__title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .engagement-step__text {
+      font-size: 0.92rem;
+      color: var(--ink-muted);
+      line-height: 1.65;
+    }
+
+    /* ═══════════════════════════════════════
+       CTA
+    ═══════════════════════════════════════ */
+    .cta {
+      padding: 140px 0;
+      background: var(--green);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(0, 0, 0, 0.15) 0%, transparent 50%);
+    }
+
+    .cta__pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+    }
+
+    .cta__inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .cta__title {
+      font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      margin-bottom: 20px;
+    }
+
+    .cta__text {
+      font-size: 1.12rem;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.8;
+      margin-bottom: 48px;
+    }
+
+    .cta__actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn--white {
+      background: var(--white);
+      color: var(--green-dark);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+
+    .btn--white:hover {
+      background: rgba(255, 255, 255, 0.92);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    }
+
+    .btn--outline-light {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn--outline-light:hover {
+      border-color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    .footer {
+      padding: 80px 0 40px;
+      background: var(--dark);
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer__inner {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 56px;
+    }
+
+    .footer__logo {
+      height: 36px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      margin-bottom: 20px;
+    }
+
+    .footer__brand-text {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.4);
+      max-width: 340px;
+    }
+
+    .footer__heading {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+    }
+
+    .footer__links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer__links a {
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.25s ease;
+    }
+
+    .footer__links a:hover {
+      color: var(--green-light);
+    }
+
+    .footer__contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+
+    .footer__contact-item svg {
+      width: 18px;
+      height: 18px;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+
+    .footer__contact-item a {
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    .footer__contact-item a:hover {
+      color: var(--green-light);
+    }
+
+    .footer__bottom {
+      padding-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* ═══════════════════════════════════════
+       MOBILE NAV
+    ═══════════════════════════════════════ */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(10, 15, 13, 0.97);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      z-index: 999;
+      padding: 120px 32px 40px;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mobile-nav.active {
+      display: flex;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 18px 0;
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 600;
+      font-size: 1.5rem;
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      transition: color 0.2s ease;
+    }
+
+    .mobile-nav a:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-nav a:hover {
+      color: var(--green-light);
+    }
+
+    /* ═══════════════════════════════════════
+       ANIMATIONS
+    ═══════════════════════════════════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes ping {
+      75%, 100% { transform: scale(2); opacity: 0; }
+    }
+
+    @keyframes orbFloat {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(30px, -20px) scale(1.05); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-d1 { transition-delay: 0.08s; }
+    .reveal-d2 { transition-delay: 0.16s; }
+    .reveal-d3 { transition-delay: 0.24s; }
+    .reveal-d4 { transition-delay: 0.32s; }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .services__grid {
+        grid-template-columns: 1fr;
+      }
+      .network__cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .network__top {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .engagement__track {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+      .engagement__track::before {
+        display: none;
+      }
+      .intro__grid,
+      .principal__inner,
+      .philosophy__inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .footer__inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .clients__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 20px;
+      }
+
+      .nav {
+        padding: 0 20px;
+      }
+
+      .nav__links {
+        display: none;
+      }
+
+      .nav__hamburger {
+        display: flex;
+      }
+
+      .hero {
+        padding: 140px 0 80px;
+        min-height: auto;
+      }
+
+      .hero__title {
+        font-size: clamp(2.4rem, 8vw, 3.2rem);
+      }
+
+      .hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero__actions .btn {
+        justify-content: center;
+      }
+
+      .hero__stats {
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .intro, .principal, .services, .network, .clients, .philosophy, .engagement, .cta {
+        padding: 80px 0;
+      }
+
+      .network__cards {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .philosophy__values {
+        grid-template-columns: 1fr;
+      }
+
+      .engagement__track {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .cta__actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .cta__actions .btn {
+        justify-content: center;
+      }
+
+      .footer__bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: clamp(1.8rem, 6vw, 2.4rem);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .network__cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAVIGATION ─── -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <img src="assets/verdant_logo.png" alt="Verdant Global Sourcing & Consulting">
+      </a>
+      <ul class="nav__links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#principal">The Principal</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#network">Network</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#contact" class="nav__cta-link">Get in Touch</a></li>
+      </ul>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about" onclick="closeMobileNav()">About</a>
+    <a href="#principal" onclick="closeMobileNav()">The Principal</a>
+    <a href="#services" onclick="closeMobileNav()">Services</a>
+    <a href="#network" onclick="closeMobileNav()">Network</a>
+    <a href="#philosophy" onclick="closeMobileNav()">Philosophy</a>
+    <a href="#contact" onclick="closeMobileNav()">Get in Touch</a>
+  </div>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <div class="hero__mesh">
+      <div class="hero__mesh-orb hero__mesh-orb--1"></div>
+      <div class="hero__mesh-orb hero__mesh-orb--2"></div>
+      <div class="hero__mesh-orb hero__mesh-orb--3"></div>
+    </div>
+    <div class="hero__grid-pattern"></div>
+    <div class="container hero__content">
+      <div class="hero__badge">
+        <span class="hero__badge-pulse"></span>
+        Global Manufacturing &middot; India
+      </div>
+      <h1 class="hero__title">
+        Building Trusted Pathways Between <span class="highlight">Global Manufacturing</span> and India
+      </h1>
+      <p class="hero__subtitle">
+        A principal-led platform enabling market entry, distribution, and long-term partnerships across India's manufacturing ecosystem.
+      </p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--green">
+          Start a Conversation <span class="btn__arrow">&rarr;</span>
+        </a>
+        <a href="#services" class="btn btn--outline">
+          Explore Services
+        </a>
+      </div>
+      <div class="hero__stats">
+        <div>
+          <div class="hero__stat-num">20+</div>
+          <div class="hero__stat-label">Years of Operating Experience</div>
+        </div>
+        <div>
+          <div class="hero__stat-num">5+</div>
+          <div class="hero__stat-label">Regions Covered Globally</div>
+        </div>
+        <div>
+          <div class="hero__stat-num">100%</div>
+          <div class="hero__stat-label">Principal-Led Engagement</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── INTRO ─── -->
+  <section class="intro" id="about">
+    <div class="container intro__grid">
+      <div class="reveal">
+        <div class="section-label">
+          <span class="section-label__bar"></span>
+          About Verdant
+        </div>
+        <p class="intro__lead">
+          Verdant works with global manufacturing and industrial technology companies to help them <span class="green">enter, scale, and succeed in India</span> &mdash; and with Indian OEMs and manufacturers to access differentiated global technologies and partners.
+        </p>
+      </div>
+      <div class="intro__body reveal reveal-d2">
+        <p>
+          India is one of the world's most opportunity-rich and execution-intensive manufacturing markets. Success here requires more than market reports or channel partners.
+        </p>
+        <p>
+          It requires operating experience, credibility, and a deep understanding of how decisions are made on the ground. Verdant exists to provide exactly that.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PRINCIPAL ─── -->
+  <section class="principal" id="principal">
+    <div class="container principal__inner">
+      <div class="reveal">
+        <div class="section-label">
+          <span class="section-label__bar"></span>
+          The Principal
+        </div>
+        <h2 class="section-title">Operator-Led.<br>Relationship-Driven.</h2>
+        <div class="principal__bio">
+          <p>
+            Verdant is led by <strong style="color:var(--white)">Nidhi Shah</strong>, an operator who has introduced, built, and scaled entirely new manufacturing technologies in India, with over two decades of experience across Indian and international markets.
+          </p>
+          <p>
+            Across her career, Nidhi has been responsible for bringing advanced manufacturing technologies to India at a time when they were largely unknown &mdash; shaping market understanding, building credibility, and guiding customers through adoption until these technologies became established and commercially viable.
+          </p>
+          <p>
+            She has worked extensively across India, Europe, the US, ASEAN, and ANZ, and has held senior leadership roles at ExOne Global Holdings (erstwhile voxeljet AG), Imaginarium Solutions, and in multiple market-entry and advisory engagements.
+          </p>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="principal__card">
+          <p class="principal__card-quote">
+            "India is one of the world's most opportunity-rich and execution-intensive manufacturing markets. Success here requires operating experience, credibility, and a deep understanding of how decisions are made on the ground."
+          </p>
+          <div class="principal__card-author">
+            <div class="principal__card-avatar">NS</div>
+            <div>
+              <div class="principal__card-name">Nidhi Shah</div>
+              <div class="principal__card-role">Founder &amp; Principal</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SERVICES ─── -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services__header reveal">
+        <div class="section-label" style="justify-content:center;">
+          <span class="section-label__bar"></span>
+          What We Do
+        </div>
+        <h2 class="section-title">Comprehensive India Market Services</h2>
+        <p class="section-text">
+          Full-lifecycle support for global companies serious about India &mdash; from market assessment and entry to distribution, scaling, and long-term partnerships.
+        </p>
+      </div>
+      <div class="services__grid">
+        <div class="service-card reveal">
+          <div class="service-card__num">01</div>
+          <h3 class="service-card__title">India Market Entry &amp; Scale-Up</h3>
+          <p class="service-card__text">
+            Support for global manufacturing and industrial technology companies that are serious about India, spanning the full market-entry and scale-up lifecycle.
+          </p>
+          <ul class="service-card__list">
+            <li>Market assessment and entry strategy</li>
+            <li>Go-to-market and pricing localisation</li>
+            <li>Partner and distributor identification</li>
+            <li>Early customer access and reference development</li>
+            <li>Ongoing market development and scaling</li>
+          </ul>
+        </div>
+        <div class="service-card reveal reveal-d1">
+          <div class="service-card__num">02</div>
+          <h3 class="service-card__title">Distribution &amp; Representation in India</h3>
+          <p class="service-card__text">
+            Selective representation of high-value, differentiated manufacturing technologies and industrial solutions in India with clear focus on long-term market creation.
+          </p>
+          <ul class="service-card__list">
+            <li>Acting as India distributor or commercial representative</li>
+            <li>Building and managing key accounts</li>
+            <li>Developing long-term sales pipelines</li>
+            <li>Positioning for Indian buying behaviour and procurement</li>
+          </ul>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card__num">03</div>
+          <h3 class="service-card__title">Buyer&ndash;Seller Connectivity</h3>
+          <p class="service-card__text">
+            Connecting the right buyers and sellers across borders, with clear commercial intent. Selective and purpose-driven &mdash; not volume-based.
+          </p>
+          <ul class="service-card__list">
+            <li>Global suppliers engaging with Indian OEMs and Tier 1 manufacturers</li>
+            <li>Indian manufacturers accessing global customers or technology partners</li>
+            <li>Structured introductions aligned on readiness and mutual value</li>
+          </ul>
+        </div>
+        <div class="service-card reveal reveal-d1">
+          <div class="service-card__num">04</div>
+          <h3 class="service-card__title">India Entry Advisory</h3>
+          <p class="service-card__text">
+            India-specific strategic advisory grounded in operating reality. Typically time-bound or retainer-based and closely aligned with on-ground execution.
+          </p>
+          <ul class="service-card__list">
+            <li>Market and ecosystem mapping</li>
+            <li>Competitive and partner landscape analysis</li>
+            <li>India-specific risk, compliance, and execution considerations</li>
+            <li>Entry sequencing and investment planning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── NETWORK ─── -->
+  <section class="network" id="network">
+    <div class="container">
+      <div class="network__top">
+        <div class="reveal">
+          <div class="section-label">
+            <span class="section-label__bar"></span>
+            The Network
+          </div>
+          <h2 class="section-title">Built Over Years of Delivery and Trust</h2>
+        </div>
+        <div class="reveal reveal-d1">
+          <p class="section-text">
+            Verdant operates across the breadth of the Indian manufacturing ecosystem, with international reach spanning Europe, the US, and beyond. This network has been built over years of delivery and trust &mdash; not cold outreach.
+          </p>
+        </div>
+      </div>
+      <div class="network__cards">
+        <div class="network-card reveal">
+          <div class="network-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
+          </div>
+          <h4 class="network-card__title">Automotive &amp; Aerospace</h4>
+          <p class="network-card__text">Large OEMs and Tier 1&ndash;2 suppliers</p>
+        </div>
+        <div class="network-card reveal reveal-d1">
+          <div class="network-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+          </div>
+          <h4 class="network-card__title">Energy &amp; Industrial</h4>
+          <p class="network-card__text">Energy and industrial OEMs across sectors</p>
+        </div>
+        <div class="network-card reveal reveal-d2">
+          <div class="network-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+          </div>
+          <h4 class="network-card__title">Advanced Manufacturing</h4>
+          <p class="network-card__text">Industrial technology providers and innovators</p>
+        </div>
+        <div class="network-card reveal reveal-d3">
+          <div class="network-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/></svg>
+          </div>
+          <h4 class="network-card__title">Enterprise Groups</h4>
+          <p class="network-card__text">Family-owned and professionally managed firms</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHO WE WORK WITH ─── -->
+  <section class="clients" id="clients">
+    <div class="container clients__inner">
+      <div class="clients__header reveal">
+        <div class="section-label" style="justify-content:center;">
+          <span class="section-label__bar"></span>
+          Who We Work With
+        </div>
+        <h2 class="section-title">Selective, Senior-Led Engagements</h2>
+        <p class="section-text">
+          Engagements are senior-led, relationship-driven, and outcome-focused.
+        </p>
+      </div>
+      <div class="clients__grid">
+        <div class="client-card reveal">
+          <div class="client-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5a17.92 17.92 0 0 1-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+          </div>
+          <div>
+            <h4 class="client-card__title">International Manufacturing SMEs</h4>
+            <p class="client-card__text">Entering or expanding in India with a serious, long-term approach to market development.</p>
+          </div>
+        </div>
+        <div class="client-card reveal reveal-d1">
+          <div class="client-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+          </div>
+          <div>
+            <h4 class="client-card__title">Industrial Technology Companies</h4>
+            <p class="client-card__text">Seeking long-term representation in India through a credible, principal-led partner.</p>
+          </div>
+        </div>
+        <div class="client-card reveal reveal-d2">
+          <div class="client-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>
+          </div>
+          <div>
+            <h4 class="client-card__title">Indian OEMs &amp; Manufacturers</h4>
+            <p class="client-card__text">Pursuing differentiated global partnerships and access to advanced technologies.</p>
+          </div>
+        </div>
+        <div class="client-card reveal reveal-d3">
+          <div class="client-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605"/></svg>
+          </div>
+          <div>
+            <h4 class="client-card__title">Investors &amp; Founders</h4>
+            <p class="client-card__text">Evaluating India as a manufacturing, sourcing, or sales base with grounded market intelligence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PHILOSOPHY ─── -->
+  <section class="philosophy" id="philosophy">
+    <div class="container philosophy__inner">
+      <div class="reveal">
+        <div class="section-label">
+          <span class="section-label__bar"></span>
+          Philosophy
+        </div>
+        <h2 class="section-title">India Is Not a Single Market</h2>
+        <p class="philosophy__statement">
+          It is a collection of industries, regions, ownership structures, and decision-making cultures. Verdant's approach reflects this complexity &mdash; grounded in operating reality, not theoretical frameworks.<br><br>
+          <span class="green">Success in India is rarely fast &mdash; but it is durable when done right.</span>
+        </p>
+      </div>
+      <div class="philosophy__values reveal reveal-d2">
+        <div class="value-card">
+          <div class="value-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
+          </div>
+          <h4 class="value-card__title">Local Realities</h4>
+          <p class="value-card__text">Respect for the nuances of how India's manufacturing ecosystem actually operates.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
+          </div>
+          <h4 class="value-card__title">Global-Local Alignment</h4>
+          <p class="value-card__text">Bridging global ambition with Indian execution capability and market context.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/></svg>
+          </div>
+          <h4 class="value-card__title">Relationship Building</h4>
+          <p class="value-card__text">Long-term trust and credibility built through consistent delivery and presence.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605"/></svg>
+          </div>
+          <h4 class="value-card__title">Commercial Discipline</h4>
+          <p class="value-card__text">Outcomes-focused with clear commercial rigour and accountability throughout.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ENGAGEMENT MODELS ─── -->
+  <section class="engagement">
+    <div class="container">
+      <div class="engagement__header reveal">
+        <div class="section-label" style="justify-content:center;">
+          <span class="section-label__bar"></span>
+          How We Work
+        </div>
+        <h2 class="section-title">Flexible Engagement Models</h2>
+        <p class="section-text">
+          Engagement models are flexible and aligned to client objectives. Verdant prioritises depth, alignment, and long-term outcomes.
+        </p>
+      </div>
+      <div class="engagement__track">
+        <div class="engagement-step reveal">
+          <div class="engagement-step__num">1</div>
+          <h4 class="engagement-step__title">Distribution &amp; Representation</h4>
+          <p class="engagement-step__text">India distributor or commercial representative for global technologies.</p>
+        </div>
+        <div class="engagement-step reveal reveal-d1">
+          <div class="engagement-step__num">2</div>
+          <h4 class="engagement-step__title">Market Entry Projects</h4>
+          <p class="engagement-step__text">Defined-scope market entry and scale-up projects with clear milestones.</p>
+        </div>
+        <div class="engagement-step reveal reveal-d2">
+          <div class="engagement-step__num">3</div>
+          <h4 class="engagement-step__title">Advisory Retainers</h4>
+          <p class="engagement-step__text">Ongoing advisory retainers grounded in operating reality and execution.</p>
+        </div>
+        <div class="engagement-step reveal reveal-d3">
+          <div class="engagement-step__num">4</div>
+          <h4 class="engagement-step__title">Strategic Partnerships</h4>
+          <p class="engagement-step__text">Structured commercial or strategic partnerships for long-term value creation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ─── -->
+  <section class="cta" id="contact">
+    <div class="cta__pattern"></div>
+    <div class="container cta__inner">
+      <div class="section-label" style="color: rgba(255,255,255,0.7); justify-content: center;">
+        <span class="section-label__bar" style="background: rgba(255,255,255,0.4);"></span>
+        Start the Conversation
+      </div>
+      <h2 class="cta__title">
+        Serious About India?<br>Let's Talk.
+      </h2>
+      <p class="cta__text">
+        If you are a global manufacturing or industrial technology company serious about India &mdash; or an Indian manufacturer seeking meaningful global partnerships &mdash; Verdant can help you navigate the path forward. Engagements typically begin with a focused conversation to assess fit, intent, and readiness.
+      </p>
+      <div class="cta__actions">
+        <a href="mailto:info@globalverdant.com" class="btn btn--white">
+          Email Us <span class="btn__arrow">&rarr;</span>
+        </a>
+        <a href="tel:+919833106710" class="btn btn--outline-light">
+          Call +91 98331 06710
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <img src="assets/verdant_logo.png" alt="Verdant" class="footer__logo">
+          <p class="footer__brand-text">
+            Building trusted pathways between global manufacturing and India. A principal-led platform enabling market entry, distribution, and long-term partnerships.
+          </p>
+        </div>
+        <div>
+          <h5 class="footer__heading">Navigation</h5>
+          <ul class="footer__links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#principal">The Principal</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#network">Network</a></li>
+            <li><a href="#philosophy">Philosophy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="footer__heading">Contact</h5>
+          <div class="footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+            <a href="mailto:info@globalverdant.com">info@globalverdant.com</a>
+          </div>
+          <div class="footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
+            <a href="tel:+919833106710">+91 98331 06710</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2025 Verdant Global Sourcing and Consulting LLP. All Rights Reserved.</span>
+        <span>LLPIN: ACH-1066</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav--scrolled', window.scrollY > 40);
+    });
+
+    // Mobile nav
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    let isOpen = false;
+
+    hamburger.addEventListener('click', () => {
+      isOpen = !isOpen;
+      mobileNav.classList.toggle('active', isOpen);
+      const s = hamburger.querySelectorAll('span');
+      if (isOpen) {
+        s[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        s[1].style.opacity = '0';
+        s[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        s[0].style.transform = '';
+        s[1].style.opacity = '';
+        s[2].style.transform = '';
+      }
+    });
+
+    function closeMobileNav() {
+      isOpen = false;
+      mobileNav.classList.remove('active');
+      const s = hamburger.querySelectorAll('span');
+      s[0].style.transform = '';
+      s[1].style.opacity = '';
+      s[2].style.transform = '';
+    }
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          closeMobileNav();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
