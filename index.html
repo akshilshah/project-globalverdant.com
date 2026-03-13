@@ -169,7 +169,7 @@
     /* ─── SECTION SHARED ─── */
     .section__label {
       display: inline-flex; align-items: center; gap: 10px;
-      font-size: 0.75rem; font-weight: 700; color: var(--verdant);
+      font-size: 0.82rem; font-weight: 700; color: var(--verdant);
       text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 20px;
     }
     .section__label-line { width: 32px; height: 2px; background: var(--verdant); }
@@ -207,7 +207,7 @@
     .services { padding: 120px 0; background: var(--silk); }
     .services__header { text-align: center; max-width: 720px; margin: 0 auto 72px; }
     .services__header .section__text { margin-top: 16px; }
-    .services__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    .services__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
     .service-card {
       background: var(--white); border-radius: var(--radius); padding: 0;
       overflow: hidden; transition: all 0.35s ease; border: 1px solid var(--border-light);
@@ -360,10 +360,10 @@
     .footer__brand-logo { height: 38px; width: auto; margin-bottom: 20px; filter: brightness(0) invert(1); }
     .footer__brand-text { font-size: 0.88rem; line-height: 1.75; max-width: 340px; color: rgba(255,255,255,0.45); }
     .footer__heading { font-size: 0.78rem; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px; }
-    .footer__links { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .footer__links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .footer__links a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.88rem; transition: color 0.25s ease; }
     .footer__links a:hover { color: var(--verdant); }
-    .footer__contact-item { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; font-size: 0.88rem; }
+    .footer__contact-item { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; font-size: 0.88rem; }
     .footer__contact-item svg { width: 18px; height: 18px; color: var(--verdant); flex-shrink: 0; }
     .footer__contact-item a { color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.25s ease; }
     .footer__contact-item a:hover { color: var(--verdant); }
@@ -450,7 +450,7 @@
 
       /* Sections */
       .about, .services, .network, .clients, .philosophy, .engagement { padding: 64px 0; }
-      .section__label { font-size: 0.7rem; margin-bottom: 14px; gap: 8px; }
+      .section__label { font-size: 0.75rem; margin-bottom: 14px; gap: 8px; }
       .section__label-line { width: 24px; }
       .section__title { font-size: 1.6rem; margin-bottom: 16px; }
       .section__text { font-size: 0.88rem; line-height: 1.7; }
@@ -590,7 +590,7 @@
         Building Trusted Pathways Between <em>Global Manufacturing</em> and India
       </h1>
       <p class="hero__subtitle">
-        A principal-led platform enabling market entry, distribution, and long-term partnerships across India's manufacturing ecosystem.
+        A principal-led platform enabling market entry, distribution, and long-term partnerships across India's manufacturing ecosystem. Verdant works with global manufacturing and industrial technology companies to help them enter, scale, and succeed in India — and with Indian OEMs and manufacturers to access differentiated global technologies and partners.
       </p>
       <div class="hero__actions">
         <a href="#contact" class="btn btn--primary">Start a Conversation <span class="btn__arrow">&rarr;</span></a>
@@ -631,16 +631,22 @@
         <div class="about__image-accent"></div>
       </div>
       <div class="about__content reveal reveal-d2">
-        <div class="section__label"><span class="section__label-line"></span> The Principal</div>
+        <div class="section__label"><span class="section__label-line"></span> The Founder</div>
         <h2 class="section__title">Operator-Led.<br>Relationship-Driven.</h2>
         <p class="section__text">
-          Verdant is led by <strong>Nidhi Shah</strong>, an operator who has introduced, built, and scaled entirely new manufacturing technologies in India, with over two decades of experience across Indian and international markets.
+          Verdant is led by <strong>Nidhi Shah</strong>, who has not only introduced but also scaled entirely new manufacturing technologies in India, with over two decades of experience across Indian and international markets.
         </p>
         <p class="section__text">
-          She has worked extensively across India, Europe, the US, ASEAN, and ANZ, and has held senior leadership roles at ExOne Global Holdings, Imaginarium Solutions, and in multiple market-entry and advisory engagements.
+          Across her career, Nidhi has been responsible for bringing advanced manufacturing technologies to India at a time when they were largely unknown — shaping market understanding, building credibility, and guiding customers through adoption until these technologies became established and commercially viable.
+        </p>
+        <p class="section__text">
+          She has worked extensively with customers across India, Europe, the US, ASEAN, and ANZ, and was a part of the management team at voxeljet AG (now a part of ExOne Global Holdings) and Imaginarium Solutions.
+        </p>
+        <p class="section__text">
+          Verdant reflects this operator-led perspective — focused on market creation, technology adoption, and long-term value, not short-term transactions.
         </p>
         <div class="about__card">
-          <p class="about__card-quote">"India is one of the world's most opportunity-rich and execution-intensive manufacturing markets. Success here requires operating experience, credibility, and deep understanding."</p>
+          <p class="about__card-quote">"India is one of the world's most opportunity-rich and execution-intensive manufacturing markets. Success here requires more than market reports or channel partners. It requires operating experience, credibility, and a deep understanding of how decisions are made on the ground. Verdant exists to provide exactly that."</p>
         </div>
       </div>
     </div>
@@ -652,58 +658,49 @@
       <div class="services__header reveal">
         <div class="section__label"><span class="section__label-line"></span> What We Do</div>
         <h2 class="section__title">Comprehensive India Market Services</h2>
-        <p class="section__text">Verdant works with global manufacturing and industrial technology companies to help them enter, scale, and succeed in India.</p>
+        <p class="section__text">Verdant supports global manufacturing and industrial technology companies to enter, scale &amp; succeed in India.</p>
       </div>
       <div class="services__grid">
         <div class="service-card reveal">
           <img class="service-card__img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Market entry strategy" loading="lazy">
           <div class="service-card__body">
             <h3 class="service-card__title">India Market Entry &amp; Scale-Up</h3>
-            <p class="service-card__text">Support spanning the full market-entry and scale-up lifecycle for companies serious about India.</p>
+            <p class="service-card__text">Engagements span the full market-entry and scale-up lifecycle:</p>
             <ul class="service-card__list">
-              <li>Market assessment and entry strategy</li>
               <li>Go-to-market and pricing localisation</li>
               <li>Partner and distributor identification</li>
+              <li>Early customer access and reference development</li>
               <li>Ongoing market development and scaling</li>
+              <li>India-specific risk, compliance, and execution considerations</li>
             </ul>
+            <p class="service-card__text" style="margin-top: 16px; margin-bottom: 0;">The emphasis is on execution and adoption — converting interest into durable market presence.</p>
           </div>
         </div>
         <div class="service-card reveal reveal-d1">
           <img class="service-card__img" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80" alt="Industrial technology" loading="lazy">
           <div class="service-card__body">
             <h3 class="service-card__title">Distribution &amp; Representation</h3>
-            <p class="service-card__text">Selective representation of high-value, differentiated manufacturing technologies and industrial solutions.</p>
+            <p class="service-card__text">Verdant selectively represents high value, differentiated manufacturing technologies and industrial solutions in India. This includes:</p>
             <ul class="service-card__list">
-              <li>India distributor or commercial representative</li>
+              <li>Acting as India distributor or commercial representative</li>
               <li>Building and managing key accounts</li>
               <li>Developing long-term sales pipelines</li>
-              <li>Positioning for Indian procurement structures</li>
+              <li>Positioning offerings for Indian buying behaviour and procurement structures</li>
             </ul>
+            <p class="service-card__text" style="margin-top: 16px; margin-bottom: 0;">Representation mandates are chosen carefully, with a clear focus on long-term market creation rather than transactional sales.</p>
           </div>
         </div>
         <div class="service-card reveal">
           <img class="service-card__img" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80" alt="Business connectivity" loading="lazy">
           <div class="service-card__body">
             <h3 class="service-card__title">Buyer-Seller Connectivity</h3>
-            <p class="service-card__text">Connecting the right buyers and sellers across borders with clear commercial intent. Selective and purpose-driven.</p>
+            <p class="service-card__text">Verdant connects the right buyers and sellers across borders, with clear commercial intent. This includes:</p>
             <ul class="service-card__list">
-              <li>Global suppliers with Indian OEMs and Tier 1 manufacturers</li>
-              <li>Indian manufacturers accessing global partners</li>
-              <li>Structured introductions aligned on mutual value</li>
+              <li>Global suppliers engaging with Indian OEMs and Tier 1 manufacturers</li>
+              <li>Indian manufacturers accessing global customers or technology partners</li>
+              <li>Structured introductions aligned on readiness, relevance, and mutual value</li>
             </ul>
-          </div>
-        </div>
-        <div class="service-card reveal reveal-d1">
-          <img class="service-card__img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80" alt="Strategic advisory" loading="lazy">
-          <div class="service-card__body">
-            <h3 class="service-card__title">India Entry Advisory</h3>
-            <p class="service-card__text">India-specific strategic advisory grounded in operating reality, closely aligned with on-ground execution.</p>
-            <ul class="service-card__list">
-              <li>Market and ecosystem mapping</li>
-              <li>Competitive and partner landscape analysis</li>
-              <li>India-specific risk and compliance considerations</li>
-              <li>Entry sequencing and investment planning</li>
-            </ul>
+            <p class="service-card__text" style="margin-top: 16px; margin-bottom: 0;">Connectivity is selective and purpose-driven — not volume-based.</p>
           </div>
         </div>
       </div>
@@ -718,18 +715,18 @@
       <div class="network__header reveal">
         <div class="section__label"><span class="section__label-line"></span> The Network</div>
         <h2 class="section__title">Built Over Years of Delivery and Trust</h2>
-        <p class="section__text">Verdant operates across the breadth of the Indian manufacturing ecosystem, with international reach spanning Europe, the US, and beyond.</p>
+        <p class="section__text">Verdant operates across the breadth of the Indian manufacturing ecosystem. Internationally, Verdant works closely with European and US manufacturing SMEs, industrial technology companies, and investors evaluating India as a growth market. This network has been built over years of delivery and trust — not cold outreach.</p>
       </div>
       <div class="network__grid">
         <div class="network-item reveal">
           <span class="network-item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke-width="1.3" stroke="#25A55F"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg></span>
-          <h4 class="network-item__title">Automotive &amp; Aerospace</h4>
-          <p class="network-item__text">Large OEMs and Tier 1-2 suppliers across sectors</p>
+          <h4 class="network-item__title">Large OEMs</h4>
+          <p class="network-item__text">Automotive, aerospace, energy, and industrial OEMs across India</p>
         </div>
         <div class="network-item reveal reveal-d1">
           <span class="network-item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke-width="1.3" stroke="#25A55F"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg></span>
-          <h4 class="network-item__title">Energy &amp; Industrial</h4>
-          <p class="network-item__text">Energy and industrial OEMs across diverse sectors</p>
+          <h4 class="network-item__title">Tier 1 &amp; 2 Suppliers</h4>
+          <p class="network-item__text">Tier 1 and Tier 2 suppliers across the manufacturing ecosystem</p>
         </div>
         <div class="network-item reveal reveal-d2">
           <span class="network-item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke-width="1.3" stroke="#25A55F"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg></span>
@@ -739,7 +736,7 @@
         <div class="network-item reveal reveal-d3">
           <span class="network-item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke-width="1.3" stroke="#25A55F"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/></svg></span>
           <h4 class="network-item__title">Enterprise Groups</h4>
-          <p class="network-item__text">Family-owned and professionally managed enterprises</p>
+          <p class="network-item__text">Family-owned manufacturing groups and professionally managed enterprises</p>
         </div>
       </div>
     </div>
@@ -751,7 +748,7 @@
       <div class="clients__content reveal">
         <div class="section__label"><span class="section__label-line"></span> Who We Work With</div>
         <h2 class="section__title">Selective, Senior-Led Engagements</h2>
-        <p class="section__text">Engagements are senior-led, relationship-driven, and outcome-focused. Verdant works selectively with companies committed to long-term value.</p>
+        <p class="section__text">Verdant works selectively with companies committed to long-term value. Engagements are senior-led, relationship-driven, and outcome-focused.</p>
         <div class="clients__list">
           <div class="client-item">
             <div class="client-item__icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5a17.92 17.92 0 0 1-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"/></svg></div>
@@ -867,19 +864,10 @@
         <div class="section__label"><span class="section__label-line"></span> Start the Conversation</div>
         <h2 class="cta__title">Serious About India?<br>Let's Talk.</h2>
         <p class="cta__text">If you are a global manufacturing or industrial technology company serious about India — or an Indian manufacturer seeking meaningful global partnerships — Verdant can help navigate the path forward.</p>
+        <p class="cta__text" style="margin-bottom: 40px; margin-top: -16px;">Engagements typically begin with a focused conversation to assess fit, intent, and readiness.</p>
         <div class="cta__actions">
           <a href="mailto:info@globalverdant.com" class="btn btn--white">Email Us <span class="btn__arrow">&rarr;</span></a>
           <a href="tel:+919833106710" class="btn btn--outline-white">Call +91 98331 06710</a>
-        </div>
-        <div class="cta__contact">
-          <div class="cta__contact-item">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
-            <a href="mailto:info@globalverdant.com">info@globalverdant.com</a>
-          </div>
-          <div class="cta__contact-item">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
-            <a href="tel:+919833106710">+91 98331 06710</a>
-          </div>
         </div>
       </div>
     </div>
