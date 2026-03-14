@@ -295,37 +295,63 @@
     .clients__footnote::before { content: ''; width: 28px; height: 1.5px; background: var(--verdant); flex-shrink: 0; }
 
     /* ─── PHILOSOPHY ─── */
-    .philosophy {
-      padding: 120px 0; position: relative; overflow: hidden;
-      background: var(--verdant); color: var(--white);
+    .philosophy { padding: 0; overflow: hidden; }
+    .philosophy__split { display: grid; grid-template-columns: 1fr 1fr; min-height: 580px; }
+    .philosophy__left {
+      padding: clamp(64px, 8vw, 120px) clamp(40px, 6vw, 96px);
+      background: #25A55F; display: flex; flex-direction: column;
+      justify-content: center; position: relative; overflow: hidden;
     }
-    .philosophy__bg-pattern {
-      position: absolute; inset: 0; opacity: 0.06;
-      background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.5) 1px, transparent 0);
-      background-size: 40px 40px;
+    .philosophy__left::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0);
+      background-size: 32px 32px;
     }
-    .philosophy__inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
-    .philosophy__content .section__label { color: rgba(255,255,255,0.7); }
-    .philosophy__content .section__label-line { background: rgba(255,255,255,0.4); }
-    .philosophy__content .section__title { color: var(--white); font-size: clamp(2.4rem, 4vw, 3.4rem); }
-    .philosophy__content .section__text { color: rgba(255,255,255,0.8); font-size: 1.05rem; margin-bottom: 16px; }
-    .philosophy__highlight {
-      font-size: 1.15rem; font-weight: 600; color: var(--white);
-      padding-left: 24px; border-left: 3px solid rgba(255,255,255,0.4);
-      margin-top: 32px; line-height: 1.6;
+    .philosophy__eyebrow {
+      display: inline-flex; align-items: center; gap: 14px;
+      font-size: 0.72rem; font-weight: 700; color: rgba(255,255,255,0.5);
+      text-transform: uppercase; letter-spacing: 0.18em; margin-bottom: 44px;
     }
-    .philosophy__values { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .value-card {
-      background: rgba(255,255,255,0.1); backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: var(--radius); padding: 32px;
+    .philosophy__eyebrow::before { content: ''; width: 28px; height: 1.5px; background: rgba(255,255,255,0.5); flex-shrink: 0; }
+    .philosophy__headline {
+      font-size: clamp(2rem, 3.2vw, 2.9rem); font-weight: 800; color: var(--white);
+      line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 28px; position: relative; z-index: 1;
     }
-    .value-card__icon {
-      width: 44px; height: 44px; border-radius: 10px; background: rgba(255,255,255,0.15);
-      display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
+    .philosophy__headline em {
+      display: block; font-weight: 400; font-style: italic;
+      color: rgba(255,255,255,0.45); font-size: 0.82em; margin-top: 6px;
     }
-    .value-card__title { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-    .value-card__text { font-size: 0.92rem; color: rgba(255,255,255,0.7); line-height: 1.65; }
+    .philosophy__body {
+      font-size: 0.97rem; color: rgba(255,255,255,0.55); line-height: 1.8;
+      max-width: 400px; position: relative; z-index: 1;
+    }
+    .philosophy__pull {
+      margin-top: 44px; padding-left: 20px; border-left: 2px solid rgba(255,255,255,0.35);
+      font-size: 1rem; font-weight: 600; color: rgba(255,255,255,0.8);
+      line-height: 1.65; font-style: italic; position: relative; z-index: 1;
+    }
+    .philosophy__right {
+      padding: clamp(64px, 8vw, 120px) clamp(40px, 6vw, 96px);
+      background: var(--white); display: flex; flex-direction: column; justify-content: center;
+    }
+    .philosophy__right-intro {
+      font-size: 0.72rem; font-weight: 700; color: var(--ink-muted);
+      text-transform: uppercase; letter-spacing: 0.18em; margin-bottom: 36px;
+    }
+    .philosophy__pillars { display: flex; flex-direction: column; }
+    .philosophy__pillar {
+      display: flex; gap: 20px; align-items: flex-start;
+      padding: 22px 0; border-top: 1px solid var(--border-light);
+      transition: padding-left 0.25s ease;
+    }
+    .philosophy__pillar:last-child { border-bottom: 1px solid var(--border-light); }
+    .philosophy__pillar:hover { padding-left: 6px; }
+    .philosophy__pillar-num {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
+      color: var(--verdant); text-transform: uppercase; padding-top: 3px; min-width: 22px; flex-shrink: 0;
+    }
+    .philosophy__pillar-title { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; line-height: 1.3; }
+    .philosophy__pillar-text { font-size: 0.9rem; color: var(--ink-muted); line-height: 1.65; }
 
     /* ─── ENGAGEMENT ─── */
     .engagement { padding: 120px 0; background: var(--silk); }
@@ -418,7 +444,8 @@
 
     /* ─── RESPONSIVE: TABLET ─── */
     @media (max-width: 1024px) {
-      .about__inner, .philosophy__inner { grid-template-columns: 1fr; gap: 48px; }
+      .about__inner { grid-template-columns: 1fr; gap: 48px; }
+      .philosophy__split { grid-template-columns: 1fr; }
       .services__grid { grid-template-columns: 1fr; }
       .network__grid, .engagement__grid { grid-template-columns: repeat(2, 1fr); }
       .cta__inner { grid-template-columns: 1fr; }
@@ -514,15 +541,10 @@
       .client-item__title { font-size: 1.05rem; }
 
       /* Philosophy */
-      .philosophy__inner { gap: 40px; }
-      .philosophy__content .section__title { font-size: 1.6rem; }
-      .philosophy__content .section__text { font-size: 0.88rem; }
-      .philosophy__highlight { font-size: 0.92rem; padding-left: 18px; margin-top: 24px; }
-      .philosophy__values { grid-template-columns: 1fr; gap: 12px; }
-      .value-card { padding: 24px; }
-      .value-card__icon { width: 38px; height: 38px; margin-bottom: 14px; }
-      .value-card__title { font-size: 0.94rem; }
-      .value-card__text { font-size: 0.86rem; }
+      .philosophy__left, .philosophy__right { padding: 56px 24px; }
+      .philosophy__headline { font-size: 1.8rem; }
+      .philosophy__pull { margin-top: 28px; font-size: 0.92rem; }
+      .philosophy__pillar { padding: 18px 0; }
 
       /* Engagement */
       .engagement__header { margin-bottom: 40px; }
@@ -804,40 +826,53 @@
 
   <!-- PHILOSOPHY -->
   <section class="philosophy" id="philosophy">
-    <div class="philosophy__bg-pattern"></div>
-    <div class="container philosophy__inner">
-      <div class="philosophy__content reveal">
-        <div class="section__label"><span class="section__label-line"></span> Philosophy</div>
-        <h2 class="section__title">India Is Not a Single Market</h2>
-        <p class="section__text">It is a collection of industries, regions, ownership structures, and decision-making cultures. Verdant's approach reflects this complexity — grounded in operating reality, not theoretical frameworks.</p>
-        <div class="philosophy__highlight">Success in India is rarely fast — but it is durable when done right.</div>
+    <div class="philosophy__split">
+      <div class="philosophy__left reveal">
+        <div class="philosophy__eyebrow">Philosophy</div>
+        <h2 class="philosophy__headline">
+          India Is Not<br>a Single Market.
+          <em>It never was.</em>
+        </h2>
+        <p class="philosophy__body">It is a collection of industries, regions, ownership structures, and decision-making cultures. Verdant's approach reflects this complexity — grounded in operating reality, not theoretical frameworks.</p>
+        <div class="philosophy__pull">Success in India is rarely fast — but it is durable when done right.</div>
       </div>
-      <div class="philosophy__values reveal reveal-d2">
-        <div class="value-card">
-          <div class="value-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg></div>
-          <h4 class="value-card__title">Local Realities</h4>
-          <p class="value-card__text">Respect for the nuances of how India's manufacturing ecosystem actually operates.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg></div>
-          <h4 class="value-card__title">Global-Local Alignment</h4>
-          <p class="value-card__text">Bridging global ambition with Indian execution capability and market context.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/></svg></div>
-          <h4 class="value-card__title">Relationship Building</h4>
-          <p class="value-card__text">Long-term trust and credibility built through consistent delivery and presence.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605"/></svg></div>
-          <h4 class="value-card__title">Commercial Discipline</h4>
-          <p class="value-card__text">Outcomes-focused with clear commercial rigour and accountability throughout.</p>
+      <div class="philosophy__right reveal reveal-d2">
+        <div class="philosophy__right-intro">Verdant's approach is based on</div>
+        <div class="philosophy__pillars">
+          <div class="philosophy__pillar">
+            <span class="philosophy__pillar-num">01</span>
+            <div>
+              <h4 class="philosophy__pillar-title">Respect for Local Realities</h4>
+              <p class="philosophy__pillar-text">Respect for the nuances of how India's manufacturing ecosystem actually operates.</p>
+            </div>
+          </div>
+          <div class="philosophy__pillar">
+            <span class="philosophy__pillar-num">02</span>
+            <div>
+              <h4 class="philosophy__pillar-title">Global-Local Alignment</h4>
+              <p class="philosophy__pillar-text">Bridging global ambition with Indian execution capability and market context.</p>
+            </div>
+          </div>
+          <div class="philosophy__pillar">
+            <span class="philosophy__pillar-num">03</span>
+            <div>
+              <h4 class="philosophy__pillar-title">Long-Term Relationship Building</h4>
+              <p class="philosophy__pillar-text">Trust and credibility built through consistent delivery and presence.</p>
+            </div>
+          </div>
+          <div class="philosophy__pillar">
+            <span class="philosophy__pillar-num">04</span>
+            <div>
+              <h4 class="philosophy__pillar-title">Commercial Discipline</h4>
+              <p class="philosophy__pillar-text">Outcomes-focused with clear commercial rigour and accountability throughout.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ENGAGEMENT -->
+  <!-- HOW WE WORK / ENGAGEMENT HIDDEN
   <section class="engagement">
     <div class="container">
       <div class="engagement__header reveal">
@@ -869,6 +904,7 @@
       </div>
     </div>
   </section>
+  END HOW WE WORK -->
 
   <!-- CTA -->
   <section class="cta" id="contact">
