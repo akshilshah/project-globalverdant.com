@@ -255,25 +255,44 @@
 
     /* ─── CLIENTS ─── */
     .clients { padding: 120px 0; }
-    .clients__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
-    .clients__content { max-width: 520px; }
-    .clients__content .section__text { margin-bottom: 48px; }
-    .clients__list { display: flex; flex-direction: column; gap: 12px; }
-    .client-item {
-      display: flex; gap: 14px; align-items: flex-start;
-      padding: 16px 20px; background: var(--silk); border-radius: var(--radius);
-      border: 1px solid var(--border-light); transition: all 0.3s ease;
+    .clients__inner { display: grid; grid-template-columns: 1fr 0.72fr; gap: 80px; align-items: start; }
+    .clients__header {
+      padding-bottom: 32px; border-bottom: 1px solid var(--border); margin-bottom: 0;
     }
-    .client-item:hover { box-shadow: var(--shadow-sm); border-color: var(--border); }
-    .client-item__icon {
-      width: 38px; height: 38px; border-radius: var(--radius-sm);
-      background: var(--verdant-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    }
-    .client-item__icon svg { width: 18px; height: 18px; color: var(--verdant); }
-    .client-item__title { font-size: 0.88rem; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
-    .client-item__text { font-size: 0.8rem; color: var(--ink-muted); line-height: 1.55; }
-    .clients__image-wrap { position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 3/4; }
+    .clients__content .section__title { font-size: clamp(1.5rem, 2.2vw, 1.9rem); }
+    .clients__header-desc { font-size: 0.92rem; color: var(--ink-muted); line-height: 1.75; margin-top: 12px; }
+    .clients__image-wrap { position: sticky; top: 120px; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 3/4; }
     .clients__image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .clients__grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .client-item {
+      padding: 28px 0; border-bottom: 1px solid var(--border-light);
+      position: relative; cursor: default; overflow: hidden;
+    }
+    .client-item:nth-child(odd) { padding-right: 40px; }
+    .client-item:nth-child(even) { padding-left: 40px; border-left: 1px solid var(--border-light); }
+    .client-item::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--verdant); transform: scaleX(0); transform-origin: left;
+      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .client-item:nth-child(even)::before { left: -1px; }
+    .client-item:hover::before { transform: scaleX(1); }
+    .client-item__num {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; color: var(--verdant);
+      text-transform: uppercase; margin-bottom: 12px;
+    }
+    .client-item__title {
+      font-size: 1rem; font-weight: 700; color: var(--ink);
+      margin-bottom: 6px; line-height: 1.3; transition: color 0.25s ease;
+    }
+    .client-item:hover .client-item__title { color: var(--verdant-dark); }
+    .client-item__text { font-size: 0.82rem; color: var(--ink-muted); line-height: 1.6; }
+    .clients__footnote {
+      padding-top: 28px; font-size: 0.75rem; font-weight: 700; color: var(--ink-muted);
+      letter-spacing: 0.1em; text-transform: uppercase;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .clients__footnote::before { content: ''; width: 28px; height: 1.5px; background: var(--verdant); flex-shrink: 0; }
 
     /* ─── PHILOSOPHY ─── */
     .philosophy {
@@ -399,7 +418,7 @@
 
     /* ─── RESPONSIVE: TABLET ─── */
     @media (max-width: 1024px) {
-      .about__inner, .clients__inner, .philosophy__inner { grid-template-columns: 1fr; gap: 48px; }
+      .about__inner, .philosophy__inner { grid-template-columns: 1fr; gap: 48px; }
       .services__grid { grid-template-columns: 1fr; }
       .network__grid, .engagement__grid { grid-template-columns: repeat(2, 1fr); }
       .cta__inner { grid-template-columns: 1fr; }
@@ -487,16 +506,12 @@
       .network-item__text { font-size: 0.74rem; }
 
       /* Clients */
-      .clients__inner { gap: 40px; }
-      .clients__content { max-width: 100%; }
-      .clients__content .section__text { margin-bottom: 28px; }
-      .clients__list { gap: 12px; }
-      .client-item { padding: 20px; gap: 14px; }
-      .client-item__icon { width: 44px; height: 44px; }
-      .client-item__icon svg { width: 20px; height: 20px; }
-      .client-item__title { font-size: 0.88rem; }
-      .client-item__text { font-size: 0.78rem; }
-      .clients__image-wrap { aspect-ratio: 16/10; max-width: 100%; }
+      .clients__inner { grid-template-columns: 1fr; gap: 48px; }
+      .clients__image-wrap { position: static; max-width: 500px; aspect-ratio: 16/10; }
+      .client-item:nth-child(odd) { padding-right: 28px; }
+      .client-item:nth-child(even) { padding-left: 28px; }
+      .client-item { padding: 36px 0; }
+      .client-item__title { font-size: 1.05rem; }
 
       /* Philosophy */
       .philosophy__inner { gap: 40px; }
@@ -516,6 +531,12 @@
       .engagement-card__num { width: 44px; height: 44px; font-size: 0.88rem; margin-bottom: 14px; }
       .engagement-card__title { font-size: 0.85rem; margin-bottom: 6px; }
       .engagement-card__text { font-size: 0.77rem; }
+
+      /* Clients mobile */
+      .clients__grid { grid-template-columns: 1fr; }
+      .client-item:nth-child(odd) { padding-right: 0; }
+      .client-item:nth-child(even) { padding-left: 0; border-left: none; }
+      .client-item { padding: 28px 0; }
 
       /* CTA */
       .cta__image { height: 220px; }
@@ -745,40 +766,35 @@
   <!-- CLIENTS -->
   <section class="clients" id="clients">
     <div class="container clients__inner">
-      <div class="clients__content reveal">
-        <div class="section__label"><span class="section__label-line"></span> Who We Work With</div>
-        <h2 class="section__title">Selective, Senior-Led Engagements</h2>
-        <p class="section__text">Verdant works selectively with companies committed to long-term value. Engagements are senior-led, relationship-driven, and outcome-focused.</p>
-        <div class="clients__list">
-          <div class="client-item">
-            <div class="client-item__icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5a17.92 17.92 0 0 1-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"/></svg></div>
-            <div>
-              <h4 class="client-item__title">International Manufacturing SMEs</h4>
-              <p class="client-item__text">Entering or expanding in India with a serious, long-term approach.</p>
-            </div>
+      <div class="clients__content">
+        <div class="clients__header reveal">
+          <div class="section__label"><span class="section__label-line"></span> Who We Work With</div>
+          <h2 class="section__title">Selective, Senior-Led Engagements</h2>
+          <p class="clients__header-desc">Verdant works selectively with companies committed to long-term value. Engagements are senior-led, relationship-driven, and outcome-focused.</p>
+        </div>
+        <div class="clients__grid">
+          <div class="client-item reveal">
+            <div class="client-item__num">01</div>
+            <h4 class="client-item__title">International Manufacturing SMEs</h4>
+            <p class="client-item__text">Entering or expanding in India with a serious, long-term approach.</p>
           </div>
-          <div class="client-item">
-            <div class="client-item__icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg></div>
-            <div>
-              <h4 class="client-item__title">Industrial Technology Companies</h4>
-              <p class="client-item__text">Seeking long-term representation through a credible, principal-led partner.</p>
-            </div>
+          <div class="client-item reveal reveal-d1">
+            <div class="client-item__num">02</div>
+            <h4 class="client-item__title">Industrial Technology Companies</h4>
+            <p class="client-item__text">Seeking long-term representation through a credible, principal-led partner.</p>
           </div>
-          <div class="client-item">
-            <div class="client-item__icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg></div>
-            <div>
-              <h4 class="client-item__title">Indian OEMs &amp; Manufacturers</h4>
-              <p class="client-item__text">Pursuing differentiated global partnerships and advanced technologies.</p>
-            </div>
+          <div class="client-item reveal reveal-d2">
+            <div class="client-item__num">03</div>
+            <h4 class="client-item__title">Indian OEMs &amp; Manufacturers</h4>
+            <p class="client-item__text">Pursuing differentiated global partnerships and advanced technologies.</p>
           </div>
-          <div class="client-item">
-            <div class="client-item__icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605"/></svg></div>
-            <div>
-              <h4 class="client-item__title">Investors &amp; Founders</h4>
-              <p class="client-item__text">Evaluating India as a manufacturing, sourcing, or sales base.</p>
-            </div>
+          <div class="client-item reveal reveal-d3">
+            <div class="client-item__num">04</div>
+            <h4 class="client-item__title">Investors &amp; Founders</h4>
+            <p class="client-item__text">Evaluating India as a manufacturing, sourcing, or sales base.</p>
           </div>
         </div>
+        <!-- <div class="clients__footnote reveal">Engagements are senior-led, relationship-driven, and outcome-focused</div> -->
       </div>
       <div class="clients__image-wrap reveal reveal-d2">
         <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Business partnership meeting" loading="lazy">
