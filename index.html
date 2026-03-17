@@ -239,7 +239,7 @@
     .network__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, var(--ink) 0%, rgba(17,17,17,0.92) 100%); }
     .network__inner { position: relative; z-index: 1; }
     .network__header { text-align: center; max-width: 720px; margin: 0 auto 72px; }
-    .network__header .section__title { color: var(--white); }
+    .network__header .section__title { color: var(--white); font-size: clamp(2.3rem, 3.6vw, 3.3rem); }
     .network__header .section__text { color: rgba(255,255,255,0.6); }
     .network__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
     .network-item {
@@ -313,7 +313,7 @@
     }
     .philosophy__eyebrow::before { content: ''; width: 28px; height: 1.5px; background: rgba(255,255,255,0.5); flex-shrink: 0; }
     .philosophy__headline {
-      font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 800; color: var(--white);
+      font-size: clamp(2.3rem, 3.6vw, 3.3rem); font-weight: 700; color: var(--white);
       line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 28px; position: relative; z-index: 1;
     }
     .philosophy__headline em {
