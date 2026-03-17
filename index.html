@@ -1127,25 +1127,36 @@
     function handleContactSubmit(e) {
       e.preventDefault();
       const form = document.getElementById('contactForm');
+      const submitBtn = form.querySelector('.contact-form__submit');
       const data = new FormData(form);
-      // Build mailto fallback
-      const subject = encodeURIComponent('Enquiry from ' + data.get('name') + ' — ' + data.get('company'));
-      const body = encodeURIComponent(
-        'Name: ' + data.get('name') + '\n' +
-        'Company: ' + data.get('company') + '\n' +
-        'Email: ' + data.get('email') + '\n' +
-        'Phone: ' + (data.get('phone') || 'Not provided') + '\n\n' +
-        data.get('message')
-      );
-      window.location.href = 'mailto:info@globalverdant.com?subject=' + subject + '&body=' + body;
-      form.style.display = 'none';
-      document.getElementById('contactSuccess').classList.add('active');
-      setTimeout(() => {
-        closeContact();
-        form.style.display = '';
-        document.getElementById('contactSuccess').classList.remove('active');
-        form.reset();
-      }, 3000);
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      fetch('https://i6mjn9i90j.execute-api.ap-south-1.amazonaws.com/prod/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.get('name'),
+          company: data.get('company'),
+          email: data.get('email'),
+          phone: data.get('phone') || '',
+          message: data.get('message')
+        })
+      }).then(res => {
+        if (!res.ok) throw new Error('Failed');
+        form.style.display = 'none';
+        document.getElementById('contactSuccess').classList.add('active');
+        setTimeout(() => {
+          closeContact();
+          form.style.display = '';
+          document.getElementById('contactSuccess').classList.remove('active');
+          form.reset();
+        }, 3000);
+      }).catch(() => {
+        alert('Something went wrong. Please try again or email us at info@globalverdant.com');
+      }).finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Send Message <span>&rarr;</span>';
+      });
     }
     window.handleContactSubmit = handleContactSubmit;
 
