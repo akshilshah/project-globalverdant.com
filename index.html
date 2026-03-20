@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <title>Verdant — Global Sourcing & Consulting</title>
-  <meta name="description" content="Building Trusted Pathways Between Global Manufacturing and India. A principal-led platform enabling market entry, distribution, and long-term partnerships across India's manufacturing ecosystem.">
+  <meta name="description" content="Building Trusted Pathways Between Global Manufacturing and India. Verdant helps global manufacturers enter and scale in India — and Indian manufacturers access differentiated global technologies.">
 
   <link rel="preload" href="assets/Manrope-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/hero-bg.webp" as="image" type="image/webp" fetchpriority="high">
@@ -176,6 +176,32 @@
     }
     .stat__number { font-size: 2.7rem; font-weight: 800; color: var(--verdant); letter-spacing: -0.03em; line-height: 1.1; }
     .stat__label { font-size: 0.95rem; color: var(--ink-muted); margin-top: 8px; font-weight: 500; }
+
+    /* ─── CAREER / BUILT ON ─── */
+    .career { padding: 100px 0; background: var(--silk); }
+    .career__header { max-width: 700px; margin-bottom: 56px; }
+    .career__timeline { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .career__role {
+      background: var(--white); border-radius: var(--radius); padding: 40px;
+      box-shadow: var(--shadow-sm); border: 1px solid var(--border-light);
+      display: flex; flex-direction: column;
+    }
+    .career__role-company { font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+    .career__role-meta { font-size: 0.88rem; color: var(--ink-muted); margin-bottom: 20px; font-weight: 500; }
+    .career__role-desc { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.75; margin-bottom: 20px; }
+    .career__role-list { list-style: none; padding: 0; margin: 0; }
+    .career__role-list li {
+      font-size: 0.9rem; color: var(--ink-muted); line-height: 1.7;
+      padding: 6px 0 6px 20px; position: relative;
+    }
+    .career__role-list li::before {
+      content: '—'; position: absolute; left: 0; color: var(--verdant); font-weight: 600;
+    }
+    .career__image-wrap {
+      grid-column: 1 / -1; border-radius: var(--radius-lg); overflow: hidden;
+      max-height: 420px; margin-top: 8px;
+    }
+    .career__image-wrap img { width: 100%; height: 100%; object-fit: cover; }
 
     /* ─── SECTION SHARED ─── */
     .section__label {
@@ -526,6 +552,7 @@
     /* ─── RESPONSIVE: TABLET ─── */
     @media (max-width: 1024px) {
       .about__inner { grid-template-columns: 1fr; gap: 48px; }
+      .career__timeline { grid-template-columns: 1fr; gap: 32px; }
       .philosophy__split { grid-template-columns: 1fr; }
       .services__grid { grid-template-columns: 1fr; }
       .network__grid, .engagement__grid { grid-template-columns: repeat(2, 1fr); }
@@ -576,7 +603,7 @@
       }
 
       /* Sections */
-      .about, .services, .network, .clients, .philosophy, .engagement { padding: 64px 0; }
+      .about, .services, .network, .clients, .philosophy, .engagement, .career { padding: 64px 0; }
       .section__label { font-size: 0.82rem; margin-bottom: 14px; gap: 8px; }
       .section__label-line { width: 24px; }
       .section__title { font-size: 1.75rem; margin-bottom: 16px; }
@@ -716,7 +743,7 @@
         Building trusted pathways<br>between <em>global manufacturing</em> and India
       </h1>
       <p class="hero__subtitle">
-        A principal-led platform enabling market entry, distribution, and long-term partnerships across India's manufacturing ecosystem. <br> Verdant works with global manufacturing and industrial technology companies to help them enter, scale, and succeed in India — and with Indian OEMs and manufacturers to access differentiated global technologies and partners.
+        Verdant helps global manufacturers enter and scale in India — and Indian manufacturers access differentiated global technologies.
       </p>
       <div class="hero__actions">
         <a href="#" onclick="openContact();return false;" class="btn btn--primary">Start a Conversation <span class="btn__arrow">&rarr;</span></a>
@@ -760,19 +787,107 @@
         <div class="section__label"><span class="section__label-line"></span> The Founder</div>
         <h2 class="section__title">Operator-led.<br>Relationship-driven.</h2>
         <p class="section__text">
-          Verdant is led by <strong>Nidhi Shah</strong>, who has not only introduced but also scaled entirely new manufacturing technologies in India, with over two decades of experience across Indian and international markets.
+          Verdant is led by <strong>Nidhi Shah</strong> — an operator, not a consultant.
         </p>
         <p class="section__text">
-          Across her career, Nidhi has been responsible for bringing advanced manufacturing technologies to India at a time when they were largely unknown — shaping market understanding, building credibility, and guiding customers through adoption until these technologies became established and commercially viable.
+          Over two decades, Nidhi has done the work that most market-entry firms only advise on — identifying the right customers, building credibility in unfamiliar markets, navigating the gap between global ambition and Indian execution reality. She has sat across the table from conservative buyers, worked through long sales cycles, and stayed through the difficult middle period when a technology is neither new nor established.
         </p>
         <p class="section__text">
-          She has worked extensively with customers across India, Europe, the US, ASEAN, and ANZ, and was a part of the management team at voxeljet AG (now a part of ExOne Global Holdings) and Imaginarium Solutions.
+          Verdant reflects her operator-led perspective — focused on market creation, technology adoption, and long-term value, not short-term transactions.
         </p>
-        <p class="section__text">
-          Verdant reflects this operator-led perspective — focused on market creation, technology adoption, and long-term value, not short-term transactions.
+        <p class="section__text" style="font-weight: 600;">
+          When you work with Verdant, you work with Nidhi directly.
         </p>
         <div class="about__card">
           <p class="about__card-quote">"India is one of the world's most opportunity-rich and execution-intensive manufacturing markets. Success here requires more than market reports or channel partners. It requires operating experience, credibility, and a deep understanding of how decisions are made on the ground. Verdant exists to provide exactly that."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREER / BUILT ON - HIDDEN
+  <section class="career" id="career">
+    <div class="container">
+      <div class="career__header reveal">
+        <div class="section__label"><span class="section__label-line"></span> What Verdant is built on</div>
+        <h2 class="section__title">Twenty years of starting conversations that didn't exist yet.</h2>
+        <p class="section__text">Before founding Verdant, Nidhi spent over two decades introducing industrial 3D printing across India's manufacturing sectors — from jewellery to foundries, from engineering to aerospace — in markets where there was no existing awareness, no reference customers, and no established path forward.</p>
+      </div>
+      <div class="career__timeline">
+        <div class="career__role reveal">
+          <div class="career__role-company">Imaginarium Solutions</div>
+          <div class="career__role-meta">3D Printing service bureau · ~7.5 years · Mumbai, India</div>
+          <p class="career__role-desc">Joined from day one to introduce industrial 3D printing to India's jewellery and engineering sectors — at a time when the technology was entirely unknown in the market.</p>
+          <ul class="career__role-list">
+            <li>First 3 years — 1 to 6 industrial 3D printers; team expanded from 8 to 48</li>
+            <li>Diversified into automotive, aerospace, medical, foundry and engineering verticals</li>
+            <li>Led India manufacturing partnerships with two of the largest EU 3D Printing service bureaus</li>
+            <li>Headed the launch of Imaginarium's 3D printer sales division, with first OEM representation for RapidShape GmbH in India</li>
+          </ul>
+        </div>
+        <div class="career__role reveal reveal-d2">
+          <div class="career__role-company">voxeljet AG</div>
+          <div class="career__role-meta">Now part of ExOne Global Holdings · ~12 years · India, ASEAN &amp; ANZ</div>
+          <p class="career__role-desc">Led India operations for voxeljet, bringing large-format industrial 3D printing to Indian foundries — the most cost-sensitive and conservative segment of the manufacturing industry. Later extended responsibility to ASEAN and ANZ markets.</p>
+          <ul class="career__role-list">
+            <li>Set up and ran voxeljet's wholly owned India subsidiary, including regulatory and compliance foundations</li>
+            <li>Installed 7 large-frame industrial 3D printing systems across Indian foundries</li>
+            <li>Brought 3D printing to foundries across India — large, medium and small — through on-demand services</li>
+            <li>Established distributor networks and market visibility across ASEAN and ANZ</li>
+            <li>Part of the senior management team through a period of significant international growth</li>
+          </ul>
+        </div>
+        <div class="career__image-wrap reveal">
+          <img src="assets/voxeljet-india.jpg" alt="voxeljet installation in India" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+  END CAREER / BUILT ON -->
+
+  <!-- PHILOSOPHY -->
+  <section class="philosophy" id="philosophy">
+    <div class="philosophy__split">
+      <div class="philosophy__left reveal">
+        <div class="philosophy__eyebrow">Philosophy</div>
+        <h2 class="philosophy__headline">
+          India is not<br>a single market.
+          <em>It never was.</em>
+        </h2>
+        <p class="philosophy__body">It is a collection of industries, regions, ownership structures, and decision-making cultures. Verdant's approach reflects this complexity — grounded in operating reality, not theoretical frameworks.</p>
+        <div class="philosophy__pull">Success in India is rarely fast — but it is durable when done right.</div>
+      </div>
+      <div class="philosophy__right reveal reveal-d2">
+        <div class="philosophy__right-intro">Verdant's approach is based on</div>
+        <div class="philosophy__pillars">
+          <div class="philosophy__pillar">
+            <span class="philosophy__pillar-num">01</span>
+            <div>
+              <h4 class="philosophy__pillar-title">Respect for local realities</h4>
+              <p class="philosophy__pillar-text">Respect for the nuances of how India's manufacturing ecosystem actually operates.</p>
+            </div>
+          </div>
+          <div class="philosophy__pillar">
+            <span class="philosophy__pillar-num">02</span>
+            <div>
+              <h4 class="philosophy__pillar-title">Global-local alignment</h4>
+              <p class="philosophy__pillar-text">Bridging global ambition with Indian execution capability and market context.</p>
+            </div>
+          </div>
+          <div class="philosophy__pillar">
+            <span class="philosophy__pillar-num">03</span>
+            <div>
+              <h4 class="philosophy__pillar-title">Long-term relationship building</h4>
+              <p class="philosophy__pillar-text">Trust and credibility built through consistent delivery and presence.</p>
+            </div>
+          </div>
+          <div class="philosophy__pillar">
+            <span class="philosophy__pillar-num">04</span>
+            <div>
+              <h4 class="philosophy__pillar-title">Commercial Discipline</h4>
+              <p class="philosophy__pillar-text">Outcomes-focused with clear commercial rigour and accountability throughout.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -910,53 +1025,6 @@
     </div>
   </section>
 
-  <!-- PHILOSOPHY -->
-  <section class="philosophy" id="philosophy">
-    <div class="philosophy__split">
-      <div class="philosophy__left reveal">
-        <div class="philosophy__eyebrow">Philosophy</div>
-        <h2 class="philosophy__headline">
-          India is not<br>a single market.
-          <em>It never was.</em>
-        </h2>
-        <p class="philosophy__body">It is a collection of industries, regions, ownership structures, and decision-making cultures. Verdant's approach reflects this complexity — grounded in operating reality, not theoretical frameworks.</p>
-        <div class="philosophy__pull">Success in India is rarely fast — but it is durable when done right.</div>
-      </div>
-      <div class="philosophy__right reveal reveal-d2">
-        <div class="philosophy__right-intro">Verdant's approach is based on</div>
-        <div class="philosophy__pillars">
-          <div class="philosophy__pillar">
-            <span class="philosophy__pillar-num">01</span>
-            <div>
-              <h4 class="philosophy__pillar-title">Respect for local realities</h4>
-              <p class="philosophy__pillar-text">Respect for the nuances of how India's manufacturing ecosystem actually operates.</p>
-            </div>
-          </div>
-          <div class="philosophy__pillar">
-            <span class="philosophy__pillar-num">02</span>
-            <div>
-              <h4 class="philosophy__pillar-title">Global-local alignment</h4>
-              <p class="philosophy__pillar-text">Bridging global ambition with Indian execution capability and market context.</p>
-            </div>
-          </div>
-          <div class="philosophy__pillar">
-            <span class="philosophy__pillar-num">03</span>
-            <div>
-              <h4 class="philosophy__pillar-title">Long-term relationship building</h4>
-              <p class="philosophy__pillar-text">Trust and credibility built through consistent delivery and presence.</p>
-            </div>
-          </div>
-          <div class="philosophy__pillar">
-            <span class="philosophy__pillar-num">04</span>
-            <div>
-              <h4 class="philosophy__pillar-title">Commercial Discipline</h4>
-              <p class="philosophy__pillar-text">Outcomes-focused with clear commercial rigour and accountability throughout.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- HOW WE WORK / ENGAGEMENT HIDDEN
   <section class="engagement">
