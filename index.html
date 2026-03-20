@@ -6,10 +6,13 @@
   <title>Verdant — Global Sourcing & Consulting</title>
   <meta name="description" content="Building Trusted Pathways Between Global Manufacturing and India. A principal-led platform enabling market entry, distribution, and long-term partnerships across India's manufacturing ecosystem.">
 
+  <link rel="preload" href="assets/Manrope-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/hero-bg.webp" as="image" type="image/webp" fetchpriority="high">
   <style>
     @font-face {
       font-family: 'Manrope';
-      src: url('assets/Manrope-VariableFont_wght.ttf') format('truetype');
+      src: url('assets/Manrope-VariableFont_wght.woff2') format('woff2'),
+           url('assets/Manrope-VariableFont_wght.ttf') format('truetype');
       font-weight: 200 800;
       font-display: swap;
     }
@@ -97,7 +100,7 @@
     }
     .hero__bg {
       position: absolute; inset: 0;
-      background: url('assets/hero-bg.jpg') center/cover no-repeat;
+      background: url('assets/hero-bg.webp') center/cover no-repeat;
     }
     .hero__overlay {
       position: absolute; inset: 0;
