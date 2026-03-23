@@ -185,6 +185,7 @@
     .career__header-text { font-size: 1rem; color: var(--ink-muted); line-height: 1.8; }
     .career__timeline {
       display: grid; grid-template-columns: 1fr 40px 1fr;
+      grid-template-rows: auto auto;
       max-width: 960px; margin: 0 auto; position: relative;
     }
     .career__spine {
@@ -200,8 +201,10 @@
       border: 3px solid var(--verdant); border-radius: 50%;
       margin-top: 56px; position: relative; z-index: 2;
     }
-    .career__col-left { grid-column: 1; padding: 40px 48px 40px 0; text-align: right; }
-    .career__col-right { grid-column: 3; padding: 40px 0 40px 48px; }
+    .career__col-left-header { grid-column: 1; grid-row: 1; padding: 40px 48px 0 0; text-align: right; }
+    .career__col-left-list { grid-column: 1; grid-row: 2; padding: 24px 48px 40px 0; }
+    .career__col-right-header { grid-column: 3; grid-row: 1; padding: 40px 0 0 48px; }
+    .career__col-right-list { grid-column: 3; grid-row: 2; padding: 24px 0 40px 48px; }
     .career__role-duration {
       font-size: 0.7rem; font-weight: 800; color: var(--verdant);
       text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 12px;
@@ -225,14 +228,14 @@
       font-size: 0.9rem; color: var(--ink-muted); line-height: 1.7;
       padding: 6px 0 6px 20px; position: relative;
     }
-    .career__col-left .career__role-desc { text-align: left; }
-    .career__col-left .career__role-list { text-align: left; }
-    .career__col-left .career__role-list li { padding: 6px 0 6px 20px; }
-    .career__col-left .career__role-list li::before {
+    .career__col-left-header .career__role-desc { text-align: left; }
+    .career__col-left-list .career__role-list { text-align: left; }
+    .career__col-left-list .career__role-list li { padding: 6px 0 6px 20px; }
+    .career__col-left-list .career__role-list li::before {
       content: ''; position: absolute; left: 0; top: 13px;
       width: 6px; height: 6px; border-radius: 50%; background: var(--verdant); opacity: 0.5;
     }
-    .career__col-right .career__role-list li::before {
+    .career__col-right-list .career__role-list li::before {
       content: ''; position: absolute; left: 0; top: 13px;
       width: 6px; height: 6px; border-radius: 50%; background: var(--verdant); opacity: 0.5;
     }
@@ -602,12 +605,12 @@
       .career__header { margin-bottom: 48px; }
       .career__timeline { grid-template-columns: 1fr; gap: 0; }
       .career__spine { display: none; }
-      .career__col-left, .career__col-right {
-        grid-column: 1; text-align: left; padding: 32px 0;
-        border-bottom: 1px solid var(--border-light);
-      }
-      .career__col-left .career__role-list li { padding: 6px 0 6px 20px; text-align: left; }
-      .career__col-left .career__role-list li::before { left: 0; right: auto; }
+      .career__col-left-header { grid-column: 1; grid-row: 1; text-align: left; padding: 32px 0 0 0; }
+      .career__col-left-list { grid-column: 1; grid-row: 2; text-align: left; padding: 0; }
+      .career__col-right-header { grid-column: 1; grid-row: 3; text-align: left; padding: 32px 0 0 0; }
+      .career__col-right-list { grid-column: 1; grid-row: 4; text-align: left; padding: 0 0 32px 0; border-bottom: 1px solid var(--border-light); }
+      .career__col-left-list .career__role-list li { padding: 6px 0 6px 20px; text-align: left; }
+      .career__col-left-list .career__role-list li::before { left: 0; right: auto; }
       .philosophy__split { grid-template-columns: 1fr; }
       .services__grid { grid-template-columns: 1fr; }
       .network__grid, .engagement__grid { grid-template-columns: repeat(2, 1fr); }
@@ -661,7 +664,8 @@
       .about, .services, .network, .clients, .philosophy, .engagement { padding: 64px 0; }
       .career { padding: 64px 0; }
       .career__header { margin-bottom: 36px; }
-      .career__col-left, .career__col-right { padding: 24px 0; }
+      .career__col-left-header, .career__col-right-header,
+      .career__col-left-list, .career__col-right-list { padding: 12px 0; }
       .career__role-company { font-size: 1.2rem; }
       .career__role-desc { font-size: 0.9rem; }
       .career__role-list li { font-size: 0.85rem; }
@@ -881,11 +885,13 @@
       </div>
       <div class="career__timeline reveal">
         <!-- Left column: Imaginarium -->
-        <div class="career__col-left">
+        <div class="career__col-left-header">
           <div class="career__role-duration">~7.5 years</div>
           <div class="career__role-company">Imaginarium Solutions</div>
           <div class="career__role-meta">3D Printing service bureau Mumbai, India</div>
           <p class="career__role-desc">Part of the founding team, to introduce industrial 3D printing to India's jewellery and engineering sectors — at a time when the technology was largely unknown.</p>
+        </div>
+        <div class="career__col-left-list">
           <ul class="career__role-list">
             <li>First 3 years - 1 to 6 industrial 3D printers; team expanded from 8 to 48</li>
             <li>Diversified into automotive, aerospace, medical, foundry and engineering verticals</li>
@@ -898,12 +904,14 @@
           <div class="career__spine-dot"></div>
         </div>
         <!-- Right column: voxeljet -->
-        <div class="career__col-right">
+        <div class="career__col-right-header">
           <div class="career__role-duration">~12 years</div>
           <div class="career__role-company">voxeljet AG <span class="career__role-parent">(now part of ExOne Global Holdings)</span></div>
           <div class="career__role-meta">3D Printing OEM Germany</div>
           <p class="career__role-desc">Led India operations to bring large-format industrial 3D printing to Indian foundries — the most cost-sensitive and conservative segment of the manufacturing industry.</p>
           <p class="career__role-desc">Later extended responsibility to ASEAN and ANZ markets.</p>
+        </div>
+        <div class="career__col-right-list">
           <ul class="career__role-list">
             <li>Set up and ran voxeljet's wholly owned India subsidiary, including regulatory and compliance foundations</li>
             <li>Installed 7 large-frame industrial 3D printing systems across Indian foundries</li>
