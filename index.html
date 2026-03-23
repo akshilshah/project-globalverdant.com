@@ -178,30 +178,73 @@
     .stat__label { font-size: 0.95rem; color: var(--ink-muted); margin-top: 8px; font-weight: 500; }
 
     /* ─── CAREER / BUILT ON ─── */
-    .career { padding: 100px 0; background: var(--silk); }
-    .career__header { max-width: 700px; margin-bottom: 56px; }
-    .career__timeline { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-    .career__role {
-      background: var(--white); border-radius: var(--radius); padding: 40px;
-      box-shadow: var(--shadow-sm); border: 1px solid var(--border-light);
-      display: flex; flex-direction: column;
+    .career { padding: 120px 0; background: var(--white); position: relative; }
+    .career__header { text-align: left; max-width: 760px; margin: 0 auto 72px; }
+    .career__header .section__title { margin-bottom: 16px; }
+    .career__header .section__title em { font-style: italic; color: var(--verdant); }
+    .career__header-text { font-size: 1rem; color: var(--ink-muted); line-height: 1.8; }
+    .career__timeline {
+      display: grid; grid-template-columns: 1fr 40px 1fr;
+      max-width: 960px; margin: 0 auto; position: relative;
     }
-    .career__role-company { font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
-    .career__role-meta { font-size: 0.88rem; color: var(--ink-muted); margin-bottom: 20px; font-weight: 500; }
-    .career__role-desc { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.75; margin-bottom: 20px; }
+    .career__spine {
+      grid-column: 2; grid-row: 1 / -1;
+      display: flex; flex-direction: column; align-items: center; position: relative;
+    }
+    .career__spine::before {
+      content: ''; position: absolute; top: 0; bottom: 0; width: 2px;
+      background: var(--border-light);
+    }
+    .career__spine-dot {
+      width: 14px; height: 14px; background: var(--white);
+      border: 3px solid var(--verdant); border-radius: 50%;
+      margin-top: 56px; position: relative; z-index: 2;
+    }
+    .career__col-left { grid-column: 1; padding: 40px 48px 40px 0; text-align: right; }
+    .career__col-right { grid-column: 3; padding: 40px 0 40px 48px; }
+    .career__role-duration {
+      font-size: 0.7rem; font-weight: 800; color: var(--verdant);
+      text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 12px;
+    }
+    .career__role-company {
+      font-size: 1.6rem; font-weight: 700; color: var(--ink);
+      letter-spacing: -0.025em; line-height: 1.15; margin-bottom: 4px;
+    }
+    .career__role-parent {
+      font-size: 0.82rem; color: var(--ink-muted); font-style: italic;
+      margin-bottom: 4px;
+    }
+    .career__role-meta {
+      font-size: 0.85rem; color: var(--ink-muted); font-weight: 500; margin-bottom: 16px;
+    }
+    .career__role-desc {
+      font-size: 0.95rem; color: var(--ink-soft); line-height: 1.8; margin-bottom: 24px;
+    }
     .career__role-list { list-style: none; padding: 0; margin: 0; }
     .career__role-list li {
       font-size: 0.9rem; color: var(--ink-muted); line-height: 1.7;
       padding: 6px 0 6px 20px; position: relative;
     }
-    .career__role-list li::before {
-      content: '—'; position: absolute; left: 0; color: var(--verdant); font-weight: 600;
+    .career__col-left .career__role-desc { text-align: left; }
+    .career__col-left .career__role-list { text-align: left; }
+    .career__col-left .career__role-list li { padding: 6px 0 6px 20px; }
+    .career__col-left .career__role-list li::before {
+      content: ''; position: absolute; left: 0; top: 13px;
+      width: 6px; height: 6px; border-radius: 50%; background: var(--verdant); opacity: 0.5;
+    }
+    .career__col-right .career__role-list li::before {
+      content: ''; position: absolute; left: 0; top: 13px;
+      width: 6px; height: 6px; border-radius: 50%; background: var(--verdant); opacity: 0.5;
     }
     .career__image-wrap {
-      grid-column: 1 / -1; border-radius: var(--radius-lg); overflow: hidden;
-      max-height: 420px; margin-top: 8px;
+      margin-top: 72px; border-radius: var(--radius-lg); overflow: hidden;
+      position: relative; max-height: 480px;
     }
-    .career__image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .career__image-wrap img { width: 100%; height: 480px; object-fit: cover; object-position: center 30%; display: block; }
+    .career__image-wrap::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.15));
+    }
 
     /* ─── SECTION SHARED ─── */
     .section__label {
@@ -552,7 +595,16 @@
     /* ─── RESPONSIVE: TABLET ─── */
     @media (max-width: 1024px) {
       .about__inner { grid-template-columns: 1fr; gap: 48px; }
-      .career__timeline { grid-template-columns: 1fr; gap: 32px; }
+      .career { padding: 80px 0; }
+      .career__header { margin-bottom: 48px; }
+      .career__timeline { grid-template-columns: 1fr; gap: 0; }
+      .career__spine { display: none; }
+      .career__col-left, .career__col-right {
+        grid-column: 1; text-align: left; padding: 32px 0;
+        border-bottom: 1px solid var(--border-light);
+      }
+      .career__col-left .career__role-list li { padding: 6px 0 6px 20px; text-align: left; }
+      .career__col-left .career__role-list li::before { left: 0; right: auto; }
       .philosophy__split { grid-template-columns: 1fr; }
       .services__grid { grid-template-columns: 1fr; }
       .network__grid, .engagement__grid { grid-template-columns: repeat(2, 1fr); }
@@ -603,7 +655,15 @@
       }
 
       /* Sections */
-      .about, .services, .network, .clients, .philosophy, .engagement, .career { padding: 64px 0; }
+      .about, .services, .network, .clients, .philosophy, .engagement { padding: 64px 0; }
+      .career { padding: 64px 0; }
+      .career__header { margin-bottom: 36px; }
+      .career__col-left, .career__col-right { padding: 24px 0; }
+      .career__role-company { font-size: 1.2rem; }
+      .career__role-desc { font-size: 0.9rem; }
+      .career__role-list li { font-size: 0.85rem; }
+      .career__image-wrap { margin-top: 48px; max-height: 360px; }
+      .career__image-wrap img { height: 360px; }
       .section__label { font-size: 0.82rem; margin-bottom: 14px; gap: 8px; }
       .section__label-line { width: 24px; }
       .section__title { font-size: 1.75rem; margin-bottom: 16px; }
@@ -805,18 +865,20 @@
     </div>
   </section>
 
-  <!-- CAREER / BUILT ON - HIDDEN
+  <!-- CAREER / BUILT ON -->
   <section class="career" id="career">
     <div class="container">
       <div class="career__header reveal">
         <div class="section__label"><span class="section__label-line"></span> What Verdant is built on</div>
-        <h2 class="section__title">Twenty years of starting conversations that didn't exist yet.</h2>
-        <p class="section__text">Before founding Verdant, Nidhi spent over two decades introducing industrial 3D printing across India's manufacturing sectors — from jewellery to foundries, from engineering to aerospace — in markets where there was no existing awareness, no reference customers, and no established path forward.</p>
+        <h2 class="section__title">Twenty years of starting conversations that <em>didn't exist yet.</em></h2>
+        <p class="career__header-text">Before founding Verdant, Nidhi spent over two decades introducing industrial 3D printing across India's manufacturing sectors — from jewellery to foundries, from engineering to aerospace — in markets where there was no existing awareness, no reference customers, and no established path forward.</p>
       </div>
-      <div class="career__timeline">
-        <div class="career__role reveal">
+      <div class="career__timeline reveal">
+        <!-- Left column: Imaginarium -->
+        <div class="career__col-left">
+          <div class="career__role-duration">~7.5 years</div>
           <div class="career__role-company">Imaginarium Solutions</div>
-          <div class="career__role-meta">3D Printing service bureau · ~7.5 years · Mumbai, India</div>
+          <div class="career__role-meta">3D Printing service bureau · Mumbai, India</div>
           <p class="career__role-desc">Joined from day one to introduce industrial 3D printing to India's jewellery and engineering sectors — at a time when the technology was entirely unknown in the market.</p>
           <ul class="career__role-list">
             <li>First 3 years — 1 to 6 industrial 3D printers; team expanded from 8 to 48</li>
@@ -825,9 +887,16 @@
             <li>Headed the launch of Imaginarium's 3D printer sales division, with first OEM representation for RapidShape GmbH in India</li>
           </ul>
         </div>
-        <div class="career__role reveal reveal-d2">
+        <!-- Center spine -->
+        <div class="career__spine">
+          <div class="career__spine-dot"></div>
+        </div>
+        <!-- Right column: voxeljet -->
+        <div class="career__col-right">
+          <div class="career__role-duration">~12 years</div>
           <div class="career__role-company">voxeljet AG</div>
-          <div class="career__role-meta">Now part of ExOne Global Holdings · ~12 years · India, ASEAN &amp; ANZ</div>
+          <div class="career__role-parent">Now part of ExOne Global Holdings</div>
+          <div class="career__role-meta">India, ASEAN &amp; ANZ</div>
           <p class="career__role-desc">Led India operations for voxeljet, bringing large-format industrial 3D printing to Indian foundries — the most cost-sensitive and conservative segment of the manufacturing industry. Later extended responsibility to ASEAN and ANZ markets.</p>
           <ul class="career__role-list">
             <li>Set up and ran voxeljet's wholly owned India subsidiary, including regulatory and compliance foundations</li>
@@ -837,13 +906,12 @@
             <li>Part of the senior management team through a period of significant international growth</li>
           </ul>
         </div>
-        <div class="career__image-wrap reveal">
-          <img src="assets/voxeljet-india.jpg" alt="voxeljet installation in India" loading="lazy">
-        </div>
+      </div>
+      <div class="career__image-wrap reveal">
+        <img src="assets/voxeljet-india.jpg" alt="voxeljet installation in India" loading="lazy">
       </div>
     </div>
   </section>
-  END CAREER / BUILT ON -->
 
   <!-- PHILOSOPHY -->
   <section class="philosophy" id="philosophy">
